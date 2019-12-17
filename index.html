@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<!--Author: Gustavo Marcano-->
+	<title>Hamilton Recycle Information</title>
+	<style>
+		body {
+			margin: auto 10em auto 10em;
+			margin-top: 0;
+		}
+
+		header {
+			text-align: center;
+		}
+
+		h1,h2 {
+			color: #14ab3f;
+		}
+
+		header p {
+			font-size: 2.2em;
+			font-weight: bold;
+			color: #14ab3f;
+			text-align: center;
+		}
+
+		p img {
+			vertical-align: middle;
+		}
+
+		nav {
+			background-color: #fbefb3;
+		}
+
+		nav ul {
+			margin-top: 0px;
+			padding: 10px;
+		}
+
+		nav li {
+			display: inline;
+			color: #14ab3f;
+			margin-right: 15px;
+			font-weight: bold;
+		}
+
+		nav li a {
+			color: #14ab3f;
+		}
+
+		nav li a:hover {
+			color: #ec834a;
+			text-decoration: underline;
+		}
+
+		nav li a:active {
+			color: black;
+		}
+
+		.recycle-list {
+			list-style-image: url(images/recycle_sm1.jpg);
+			line-height: 3em;
+		}
+
+		.community-recycle-list span {
+			text-decoration-line: underline;
+			text-decoration-style: double;
+			list-style-type: circle;
+		}
+
+		.community-recycle-list {
+			list-style-type: circle;
+		}
+
+		.map {
+			float: right;
+		}
+
+		.recycle-tips-list {
+			list-style-type: lower-roman;
+		}
+
+		li a {
+			background-color: #fbefb3;
+			text-decoration: none;
+		}
+
+		footer {
+			border-top: 1px solid black;
+			text-align: center;
+			margin-bottom: 5em;
+			background: url(images/ricepaper.png);
+		}
+
+		.large-item-pickup em {
+			color: #b8860b;
+		}
+
+		.contact-us {
+			color: #14ab3f;
+			font-weight: bold;
+		}
+
+		@media screen and (max-width: 850px) {
+			body {
+				margin: 0;
+				display: grid;
+				grid-template-columns: 1fr;
+			}
+			body > :not(header) {
+				margin-left: 10px;
+				margin-right: 10px;
+			}
+			.map {
+				float: none;
+				margin-left: auto;
+				margin-right: auto;
+				display: block;
+			}
+			header {
+				grid-column: 1;
+				width: 100%;
+			}
+
+			.recycleimage {
+				display: none;
+			}
+
+			.bar1, .bar2, .bar3 {
+				width: 35px;
+				height: 4.5px;
+				background-color: #14ab3f;
+				margin: 6px 0;
+				transition: 0.75s;
+				cursor: pointer;
+			}
+
+			.topnav {
+				background-color: #fbefb3;
+				margin-top: 0;
+			}
+
+			.topnav li:not(:first-child) a {
+				display: none;
+			}
+			
+			nav .responsive li {
+				display: block;
+			}
+
+			nav .responsive li:not(:first-child) a:hover {
+				background-color: #14ab3f;
+				width: 100%;
+				margin-left: 0;
+			}
+			
+			nav .responsive li:nth-child(2) a {
+				margin-top: 30px;
+			}
+			.topnav.responsive {
+				position: relative;
+				padding-left: 0;
+			}
+
+			.icon {
+				float: right;
+				display: block;
+				position: absolute;
+				right: 10px;
+				top: 0px;
+			}
+			.topnav.responsive .icon {
+				position: absolute;
+				right: 0;
+				top: 0;
+				padding: 0px 12px;
+			}
+			
+			.topnav.responsive li a {
+				float: none;
+				display: block;
+				background-color: #fbefb3;
+				text-align: left;
+				padding: 14px 16px;
+			}
+
+			.change .bar1 {
+				-webkit-transform: rotate(-45deg) translate(-9px, 6px);
+				transform: rotate(-45deg) translate(-9px, 6px);
+			}
+			.change .bar2 {
+				opacity: 0;
+			}
+			.change .bar3 {
+				-webkit-transform: rotate(45deg) translate(-8px, -8px);
+				transform: rotate(45deg) translate(-8px, -8px);
+			}
+		}
+	</style>
+</head>
+
+<body>
+	<header>
+		<nav>
+			<ul class="topnav" id="myTopnav">
+				<li>
+					<a href="javascript:void(0)" class="icon" onclick="myFunction(this)">
+						<div class="bar1"></div>
+						<div class="bar2"></div>
+						<div class="bar3"></div>
+					</a>
+				</li>
+				<li>
+					<a href="#recycle-centers" title="Recycle Centers">
+						Recycle Centers
+					</a>
+				</li>
+				<li>
+					<a href="#resources" title="Resources">
+						Resources
+					</a>
+				</li>
+				<li>
+					<a href="#composting" title="Composting">
+						Composting
+					</a>
+				</li>
+				<li>
+					<a href="http://www.compost.org" title="Contact Us">
+						Contact Us
+					</a>
+				</li>
+			</ul>
+		</nav>
+		<p id="recycleheading">
+			<img src="images/recycle_f2019_sm.jpg" alt="Recycle image" class="recycleimage"> 
+			
+				Recycle 
+			
+			<img src="images/recycle_f2019_sm.jpg" alt="Recycle image" class="recycleimage">
+		</p>
+	</header>
+	<h1>What goes in a recycling box?</h1>
+	<p>Put the following items in a recycling box:</p>
+	<ul class="recycle-list">
+		<li>Glass</li>
+		<li>Paper</li>
+		<li>Plastic</li>
+		<li>Aluminum foil (clean)</li>
+		<li>Cardboard (fold or break into small pieces)</li>
+		<li>Styrofoam (new in 2019/2020)</li>
+	</ul>
+	<section>
+		<h2>Community Recycling Centers</h2>
+		<p>
+			Community Recycling Centers will accept good used clothing, furniture and household items for their on-site
+			stores. Instead of calling for a bulk pickup, take used items to the Community Recycling Centers!
+		</p>
+		<img class="map" src="images/recycle_map.png" alt="map" >
+		<ul>
+			<li class="community-recycle-list">
+				<span>West Community Recycling Center</span>
+				<ul>
+					<li>Monday: 10 am - 1 pm</li>
+					<li>Wednesday: 10 am - 5 pm</li>
+					<li>First Saturday of each month only: 9 am - 12 pm</li>
+				</ul>
+			</li>
+			<li class="community-recycle-list">
+				<span>East Community Recycling Center</span>
+				<ul>
+					<li>Tuesday: 10 am - 2 pm</li>
+					<li>Saturday: 10 am - 12 pm</li>
+				</ul>
+			</li>
+		</ul>
+	</section>
+	<section class="large-item-pickup">
+		<h2>Large Item Pickup</h2>
+		<p>
+			Large items can be picked up by the city garbage collection service. Please contact us directly for a to
+			arrange a pickup time.
+		</p>
+		<p>
+			Recycling is good for the environment. Our city has one of the best recycling programs in the world! <em>You
+				can
+				pick up another recycling box at City Hall</em>. Bulk items can also be picked up on your regular
+			garbage
+			collection day.
+		</p>
+	</section>
+	<section>
+		<h2>Recycling Tips</h2>
+		Get into the habit of recycling, and it will become second nature. Here are some tips that will help you:
+		<ul>
+			<li>
+				Bottles, cans and jars:
+				<ul class="recycle-tips-list">
+					<li><span>All bottles, cans and jars must be empty.</span></li>
+					<li>Take the lids off of all bottles, cans and jars and rinse them.</li>
+					<li>Throw all metals lids into the recycling box.</li>
+					<li>Throw plastic lids that bend easily into the recycling box.</li>
+				</ul>
+			</li>
+			<li>
+				Leaf and yard waste can be placed in paper bags. You can also use yard waste to make compost for your
+				garden. <a href="http://www.compost.org">How to make compost.</a>
+			</li>
+			<li><span>Green bins can be used for kitchen waste.</span></li>
+		</ul>
+	</section>
+	<footer>
+		<p class="contact-us">Contact Us</p>
+		<p>
+			<em>
+				Our City <br />
+				P.O. Box 3567 <br />
+				Our City, ON <br />
+				L8T 4N1
+			</em>
+		</p>
+	</footer>
+
+	<script>
+		function myFunction(x) {
+			x.classList.toggle("change");
+			var y = document.getElementById("myTopnav");
+			var recycleElememnt = document.getElementById("recycleheading");
+
+			if(y.className === "topnav") {
+				y.className += " responsive";
+
+				recycleElememnt.classList.add("recycleheading")
+				
+			}
+			else {
+				y.className = "topnav";
+				recycleElememnt.classList.remove("recycleheading")
+			}
+
+		}
+
+	</script>
+</body>
+
+</html>
